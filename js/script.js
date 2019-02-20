@@ -47,7 +47,7 @@ var quotes = [
   },
 ]
 
-//  console.log(quotes[0].quote) ;
+
 
 
 /***
@@ -67,7 +67,7 @@ function getRandomQuote(array) {
   return randomNumber;
 }
 
-// // randomNumber = quotes[randomNumber].quote; 
+
 
 /***
   Create the `printQuote` function to: 
@@ -81,22 +81,22 @@ function getRandomQuote(array) {
 
 function printQuote() {
   var sendQuote = getRandomQuote(); 
-  var html = '<p>' + sendQuote.quote + '</p>'
-  html += '<p>' + sendQuote.source + '</p>';
-  html += '<p>' + sendQuote.tags + '</p>';
-  if ( sendQuote.year || sendQuote ) {
-    html += '<p>' + sendQuote.year + '</p>';
-  } else if (sendQuote.year === "undefined" ) {
-    sendQuote.year += '<p>' + 'N/A' + '</p>';
-  }
-  return html;
+  var html = "<p class=quote>" + sendQuote.quote + "</p>";
+  html += "<p class=quote>" + sendQuote.source + "</p>";
+  html += '<span class="citation">' + sendQuote.tags + "</span>";
+  html += '</p>'
+  if ( sendQuote.year ) {
+    html += '<span class="year">' + sendQuote.year + '</span>'
+    }
+    document.getElementById('quote-box').innerHTML = html;
+    return html;
 }
 
 
   
 
 
-// // console.log(prop, ': ', quotes[prop].source);
+
 
 
 
@@ -107,11 +107,8 @@ function printQuote() {
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
+  function.
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
