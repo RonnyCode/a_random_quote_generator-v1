@@ -49,7 +49,7 @@ function printQuote() {
 setInterval(printQuote, 20000);
 //Calls the 'printQuote' function to display a random quote when the button "Show Another Quote" is clicked.
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
+//This function uses a random number to return a random color to style the page.
 function getRandomColor() {
 	var letters = '0123456789ABCDEF'.split('');
 	var color = '#';
