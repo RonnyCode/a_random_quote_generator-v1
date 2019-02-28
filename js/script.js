@@ -3,7 +3,7 @@ Treehouse Techdegree:
 FSJS project 1 - A Random Quote Generator
 ******************************************/
 // Array of quote objects that includes different properties.
-var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+let randomColor = Math.floor(Math.random() * 16777215).toString(16);
 let quotes = [{
 	quote: "I have not failed. I've just found 10,000 ways that won't work.",
 	source: "Thomas Alva Edison",
@@ -51,8 +51,8 @@ setInterval(printQuote, 20000);
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 //This function uses a random number to return a random color to style the page.
 function getRandomColor() {
-	var letters = '0123456789ABCDEF'.split('');
-	var color = '#';
+	let letters = '0123456789ABCDEF'.split('');
+	let color = '#';
 	for (var i = 0; i < 6; i++) {
 		color += letters[Math.round(Math.random() * 16)];
 	}
